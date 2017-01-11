@@ -1,11 +1,21 @@
 FROM ubuntu:16.04
 MAINTAINER ARC-TS <arcts-dev@umich.edu>
 
-ARG SINGULARITY_VERSION=2.2
+ARG BUILD_DATE
+ARG SINGULARITY_VERSION
+ARG VCS_REF
+ARG VERSION
 
-LABEL name="Singularity-Util" \
-      license="MIT"           \
-      Singularity.Version=$SINGULARITY_VERSION
+LABEL architecture="x86_64"                                \
+      build-date="$BUILD_DATE"                             \
+      license="MIT"                                        \
+      name="arc-ts/singularity-util"                       \
+      summary="Docker based wrapper for Singularity"       \
+      version="$VERSION"                                   \
+      vcs-ref="$VCS_REF"                                   \
+      vcs-type="git"                                       \
+      vcs-url="https://github.com/arc-ts/singularity-util" \
+      singularity.version="$SINGULARITY_VERSION"
 
 RUN apt-get update     \
  && apt-get -y install \
