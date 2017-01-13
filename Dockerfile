@@ -9,7 +9,7 @@ ARG VERSION
 LABEL architecture="x86_64"                                \
       build-date="$BUILD_DATE"                             \
       license="MIT"                                        \
-      name="arc-ts/singularity-util"                       \
+      name="arcts/singularity-util"                        \
       summary="Docker based wrapper for Singularity"       \
       version="$VERSION"                                   \
       vcs-ref="$VCS_REF"                                   \
