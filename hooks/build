@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$DOCKER_TAG" == 'latest' ]; then
-  s_version='2.2'
+  s_version='2.2.1'
 else
   s_version="$DOCKER_TAG"
 fi

@@ -1,0 +1,2 @@
+1.0.1:
+  - Bump default Singularity Version to 2.2.1 to account for MS_NODEV vulnerability
