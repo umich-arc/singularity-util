@@ -1,2 +1,6 @@
+1.0.2:
+  - Added deboopstrap
+  - Fixed 'Text File Busy' Build error
+
 1.0.1:
   - Bump default Singularity Version to 2.2.1 to account for MS_NODEV vulnerability
