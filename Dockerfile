@@ -23,6 +23,7 @@ RUN apt-get update     \
     automake        \
     autotools-dev   \
     build-essential \
+    debootstrap     \
     debhelper       \
     dh-autoreconf   \
     git             \
@@ -39,7 +40,9 @@ RUN apt-get update     \
 COPY ./skel /
 
 RUN chmod +x ./build.sh \
+ && sync \
  && chmod +x ./init.sh  \
+ && sync \
  && ./build.sh
 
 ENTRYPOINT [ "./init.sh" ]
