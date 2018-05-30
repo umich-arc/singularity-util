@@ -1,3 +1,6 @@
+1.0.3:
+  - Fixed issue with bash command call in debug command
+
 1.0.2:
   - Added deboopstrap
   - Fixed 'Text File Busy' Build error
