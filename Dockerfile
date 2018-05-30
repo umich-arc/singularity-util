@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 MAINTAINER ARC-TS <arcts-dev@umich.edu>
 
 ARG BUILD_DATE
-ARG SINGULARITY_VERSION
+ARG SINGULARITY_VERSION=2.5.1
 ARG VCS_REF
 ARG VERSION
 
@@ -31,6 +31,9 @@ RUN apt-get update     \
     python          \
     rpm             \
     sudo            \
+    libarchive-dev  \
+    help2man        \
+    squashfs-tools  \
  && mkdir build     \
  && mkdir target    \
  && apt-get -y autoremove \
