@@ -1,3 +1,7 @@
+1.0.3:
+  - Now supporting Singularity version 2.5.1 and set as default
+  - Image rebased from an Ubuntu 18.04 docker image
+
 1.0.2:
   - Added deboopstrap
   - Fixed 'Text File Busy' Build error
