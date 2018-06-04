@@ -27,11 +27,13 @@ RUN apt-get update     \
     debhelper       \
     dh-autoreconf   \
     git             \
+    help2man        \
+    libarchive-dev  \
     libtool         \
     python          \
     rpm             \
     sudo            \
-    libarchive-dev  \
+    squashfs-tools  \
  && mkdir build     \
  && mkdir target    \
  && apt-get -y autoremove \
