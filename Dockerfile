@@ -31,6 +31,7 @@ RUN apt-get update     \
     python          \
     rpm             \
     sudo            \
+    libarchive-dev  \
  && mkdir build     \
  && mkdir target    \
  && apt-get -y autoremove \

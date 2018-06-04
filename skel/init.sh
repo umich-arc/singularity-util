@@ -87,7 +87,7 @@ main() {
   case "${1,,}" in
     bootstrap|copy|create|expand|exec|export|import|run|shell|test) s_cmd "$@" ;;
     build) shift; s_build "$@" ;;
-    debug) shift; exec /bin/bash "$@" ;;
+    debug) shift; exec /bin/bash -c "$@" ;;
     *) usage ;;
   esac
 }
