@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER ARC-TS <arcts-dev@umich.edu>
 
 ARG BUILD_DATE
@@ -27,10 +27,13 @@ RUN apt-get update     \
     debhelper       \
     dh-autoreconf   \
     git             \
+    help2man        \
+    libarchive-dev  \
     libtool         \
     python          \
     rpm             \
     sudo            \
+    squashfs-tools  \
  && mkdir build     \
  && mkdir target    \
  && apt-get -y autoremove \

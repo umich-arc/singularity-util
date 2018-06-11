@@ -1,12 +1,15 @@
 # Singularity-Util
 
-A [Docker](https://github.com/docker/docker) based container that acts as a multi-purpose wrapper for [Singularity](https://github.com/singularityware/singularity). It is ideal for integrating into Docker centric build systems or for use platforms (OSX/Windows) where Singularity cannot be directly installed.
+A [Docker](https://github.com/docker/docker) based container that acts as a multi-purpose wrapper for [Singularity](https://github.com/singularityware/singularity). It is ideal for integrating into Docker centric build systems or for
+use platforms (OSX/Windows) where Singularity cannot be directly installed.
 
 ---
 
 ## Usage
 
-The `singularity-util` container will accept the majority of Singularity commands with the caveat that all paths **MUST** be relative to the `/target` directory within the container. `/target` acts as the current working directory for all the Singularity based commands.
+The `singularity-util` container will accept the majority of Singularity commands with the caveat that all paths
+**MUST** be relative to the `/target` directory within the container. `/target` acts as the current working directory
+for all the Singularity based commands.
 
 
 ```bash
@@ -15,18 +18,22 @@ docker run --rm --privileged -v $(pwd):/target:rw arcts/singularity-util <comman
 ```
 
 
-Supported Singularity commands include `bootstrap`, `copy`, `create`, `expand`, `exec`, `export`, `import`, `run`, `shell`, and `test`. For the Singularity specific usage commands, please see their [command reference documentation](http://singularity.lbl.gov/docs-usage).
+Supported Singularity commands include `bootstrap`, `copy`, `create`, `expand`, `exec`, `export`, `import`, `run`, 
+`shell`, and `test`. For the Singularity specific usage commands, please see their 
+[command reference documentation](http://singularity.lbl.gov/docs-usage).
 
 Non-Singularity commands include `build` and `debug`.
-* `build` accepts `rpm`, `deb` or nothing for both as parameters and will build packages via the provided packaging system, then drop them in the `/target` directory.
-* `debug` simply drops to a bash shell within the `singularity-util` container and is useful for troubleshooting. If any parameters are supplied, they will be passed to `/bin/bash`.
+* `build` accepts `rpm`, `deb` or nothing for both as parameters and will build packages via the provided packaging
+  system, then drop them in the `/target` directory.
+* `debug` Executes an arbitrary command within the `singularity-util` container and is useful for troubleshooting. 
+  To drop to a bash shell simply execute: `debug bash`.
 
 ## Examples:
 
 **Building Packages**
 
 ```bash
-$ docker run --rm -v $(pwd):/target arcts/singularity-util build rpm
+$ docker run --rm -v $(pwd):/target arcts/singularity-util build deb
    ...
 $ ls *.rpm
   singularity-2.2-0.1.x86_64.rpm		singularity-devel-2.2-0.1.x86_64.rpm
@@ -69,4 +76,7 @@ $ docker run --rm --privileged -v $(pwd):/target arcts/singularity-util expand -
 ```
 
 ## Building Alternate Versions
-Alternate versions of Singularity can be baked into the `singularity-util` container by supplying the Docker build argument `SINGULARITY_VERSION`. This should correlate to a git tag, branch or commit id within the [Singularity Github repo](https://github.com/singularityware/singularity). This build argument will update the image label `Singularity.Version`.
+Alternate versions of Singularity can be baked into the `singularity-util` container by supplying the Docker build
+argument `SINGULARITY_VERSION`. This should correlate to a git tag, branch or commit id within the
+[Singularity Github repo](https://github.com/singularityware/singularity). This build argument will update the image
+label `Singularity.Version`.
